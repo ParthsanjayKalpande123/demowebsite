@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donation</title>
+    <link rel="stylesheet" href="css/Donation.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tree {
+            display: inline-block;
+            font-size: 2rem;
+            margin: 5px;
+            opacity: 0;
+            transform: scale(0);
+            animation: grow 0.5s ease-out forwards;
+        }
+
+        @keyframes grow {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        #treeArea {
+            min-height: 100px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="bg-Donation">
+    <div class="d-text">
+        <p>Support Our Mission</p>
+    </div>
+    <div class="d-text1">
+        <p>Your donation helps us plant trees, clean the<br/>environment, and support communities.</p>
+    </div>
+</div>
+
+<div class="amount">
+    <p class="heading">Donation Option</p>
+    <button type="button" class="btn btn-success" onclick="plantTrees(100)" style="display: inline-block;margin-right: 10px;margin-top: 10px;margin-left: 10px;width:100px;box-shadow: 3px 9px 10px rgba(0, 0, 0, 0.2);">&#8377;100</button>
+    <button type="button" class="btn btn-success" onclick="plantTrees(250)" style="display: inline-block;background-color: orange;margin-right: 10px;margin-top: 10px;width:100px; box-shadow: 3px 9px 10px rgba(0, 0, 0, 0.2);">&#8377;250</button>
+    <button type="button" class="btn btn-success" onclick="plantTrees(500)" style="display: inline-block;background-color: orange;margin-right: 10px;margin-top: 10px;width:100px; box-shadow: 3px 9px 10px rgba(0, 0, 0, 0.2);">&#8377;500</button>
+    <button type="button" class="btn btn-success" onclick="plantTrees(1000)" style="display: inline-block;margin-right: 10px;margin-top: 10px;width:100px; box-shadow: 3px 9px 10px rgba(0, 0, 0, 0.2);">&#8377;1000</button> 
+</div>
+
+<!-- Row for Form and Tree Animation -->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Form Column -->
+        <div class="col-md-6">
+            <form class="donation-form" method="POST" action="Donated.php">
+                <h1 class="form-title">Donor Information</h1>
+                <label for="name" class="form-label">Full Name of Donor</label>
+                <input type="text" id="name" name="Name" placeholder="Enter your name" required />
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="Email" placeholder="Enter your Email" required />
+                <label for="Amount" class="form-label">Enter Donation Amount (100,250,500,1000)</label>
+                <input type="text" id="Amount" name="Amount" placeholder="Enter Donation Amount" required />
+                <button type="submit" class="submit-button">
+                    Proceed for Payment
+                </button>
+            </form>
+        </div>
+
+        <!-- Tree Animation Column -->
+        <div class="col-md-6 text-center">
+            <h5 class="mb-3">&#x1F331;Trees Being Planted</h5>
+            <div id="treeArea"></div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const range = document.getElementById("priceRange");
+    const priceValue = document.getElementById("priceValue");
+
+    range.addEventListener("input", () => {
+        priceValue.textContent = range.value;
+        plantTrees(range.value); // update trees based on range
+    });
+
+    function plantTrees(amount) {
+  const treeArea = document.getElementById("treeArea");
+  treeArea.innerHTML = "";
+  const treeCount = Math.floor(amount / 50);
+  for (let i = 0; i < treeCount; i++) {
+    const tree = document.createElement("img");
+    tree.src = "img/tree.png";
+    tree.classList.add("tree");
+    tree.style.animationDelay = `${i * 0.1}s`;
+    treeArea.appendChild(tree);
+  }
+}
+</script>
+</body>
+</html>

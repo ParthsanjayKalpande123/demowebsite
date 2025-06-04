@@ -1,0 +1,168 @@
+.bg-Donation{
+    background-image: url("../img/donation.webp");
+    background-size: cover;
+    height:350px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.d-text{
+    color:white;
+    font-weight: bold;
+    text-align: left;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.d-text1{
+    color:white;
+    text-align: left;
+    font-size: 25px;
+    padding-left: 20px;
+}
+.heading{
+    font-weight: bold;
+    font-size: 20px;
+    padding-top:10px;
+    margin-left: 10px;
+}
+.donation-form {
+    margin-left: 30px;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Aligns content to the left */
+            gap: 20px; /* Increased gap for better spacing */
+            background-color: #ffffff;
+            padding: 40px; /* Increased padding */
+            border-radius: 12px; /* Slightly more subtle radius */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Softer, more professional shadow */
+            width: 100%;
+            max-width: 550px; /* Slightly wider form for better layout */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Form Title */
+        .form-title {
+            color: #2E7D32; /* Deep forest green */
+            margin-bottom: 15px; /* More space below title */
+            font-size: 32px; /* Larger title */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; /* Bold */
+            align-self: flex-start; /* Ensure title is left-aligned */
+        }
+
+        /* Form Labels */
+        .form-label {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #4CAF50; /* Brighter green for labels */
+            font-weight: 600; /* Semi-bold for labels */
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] { /* Kept number type for flexibility, though not used for custom amount anymore */
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #c8e6c9;
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 16px;
+            color: #333333;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus {
+            border-color: #4CAF50; /* Highlight on focus */
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Amount Buttons Container */
+        .amount-buttons {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            gap: 12px; /* Slightly increased gap for buttons */
+            width: 100%; /* Ensure container takes full width */
+            justify-content: flex-start; /* Align buttons to the left */
+        }
+
+        /* Individual Amount Buttons */
+        .amount-btn {
+            background-color: #E8F5E9; /* Very light green background */
+            color: #2E7D32; /* Dark green text */
+            border: 1px solid #A5D6A7; /* Subtle border */
+            padding: 12px 25px; /* More generous padding */
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+            min-width: 90px; /* Ensure buttons have a minimum width */
+            text-align: center;
+        }
+
+        .amount-btn:hover {
+            background-color: #C8E6C9; /* Slightly darker green on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+
+        .amount-btn.active {
+            background-color: #4CAF50; /* Primary green when active */
+            color: white;
+            border-color: #4CAF50;
+            box-shadow: 0 2px 6px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Custom Amount Field (Removed as per request, but style available if needed) */
+        /*
+        #Amount {
+            margin-top: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #c8e6c9;
+            width: 100%;
+            font-size: 16px;
+            color: #333333;
+        }
+        */
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 25px; /* More space above button */
+            padding: 15px 30px; /* Larger button */
+            background-color: #4CAF50; /* Primary green */
+            color: white;
+            font-size: 18px; /* Larger font */
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            align-self: flex-start; /* Align to the left */
+            width: auto; /* Button width adapts to content */
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3); /* Soft shadow for depth */
+        }
+
+        .submit-button:hover {
+            background-color: #388E3C; /* Darker green on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .donation-form {
+                padding: 25px;
+                margin: 20px;
+            }
+            .form-title {
+                font-size: 26px;
+            }
+            .amount-btn {
+                flex-grow: 1; /* Buttons grow to fill space on small screens */
+                min-width: unset;
+            }
+        }

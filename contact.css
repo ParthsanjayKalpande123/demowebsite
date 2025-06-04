@@ -1,0 +1,53 @@
+.background{
+    background-image: url("../img/contactbg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 400px;
+    background-size: cover;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;;
+    box-shadow: 3px 3px 8px rgb(0,0,0,0.5) ;
+}
+.urgentform{
+    background-image: url("../img/contact1.jpg");
+    text-align: center;
+    color:white;
+}
+.normalform{
+    background-image: url("../img/contact2.jpg");
+    text-align: center;
+    color:white;
+}
+input[type=text]{
+    color:black;
+    margin-top: 10px;
+    width: 60%;
+}
+input[type=email]{
+    color:black;
+    margin-top: 10px;
+    width: 60%;
+}
+
+ button{
+    background-color: green;
+    width:20%;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+ }
+ #t-1{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+ }
+ .r-1{
+    margin-top: 10px;
+ }
+
+ 
